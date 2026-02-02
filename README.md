@@ -5,7 +5,7 @@
 [![Tkinter](https://img.shields.io/badge/UI-Tkinter-grey.svg)](https://docs.python.org/3/library/tkinter.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**YOLO Vision Rover** je sofisticirana desktop aplikacija razvijena u Python-u koja služi kao kontrolni centar za pametno vozilo bazirano na mikrokontrolerima (poput ESP32-CAM ili Raspberry Pi). Aplikacija kombinuje daljinsko upravljanje u realnom vremenu sa naprednim AI funkcijama za prepoznavanje objekata pomoću **YOLOv8** modela.
+**YOLO Projekat Python** je sofisticirana desktop aplikacija razvijena u Python-u koja služi kao kontrolni centar za pametno vozilo bazirano na mikrokontrolerima (poput ESP32-CAM ili Raspberry Pi). Aplikacija kombinuje daljinsko upravljanje u realnom vremenu sa naprednim AI funkcijama za prepoznavanje objekata pomoću **YOLOv8** modela.
 
 
 
