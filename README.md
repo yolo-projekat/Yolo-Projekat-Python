@@ -1,4 +1,4 @@
-# 🚗 YOLO Vision Rover Control (Python Edition)
+# 🚗 YOLO Projekat Python
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
 [![Ultralytics](https://img.shields.io/badge/YOLO-v8-red.svg)](https://docs.ultralytics.com/)
