@@ -1,0 +1,14 @@
+# Osnovna biblioteka za YOLOv8 detekciju
+ultralytics
+
+# Obrada slika i video striminga
+opencv-python
+pillow
+numpy
+
+# Mrežna komunikacija
+websockets
+requests
+
+# Asinhroni rad (ugrađen u Python, ali obezbeđuje kompatibilnost)
+asyncio
