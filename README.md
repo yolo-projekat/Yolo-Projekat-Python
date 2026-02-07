@@ -1,89 +1,93 @@
-# 🚗 YOLO Projekat Python
+Markdown
+<div align="center">
 
-[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
-[![Ultralytics](https://img.shields.io/badge/YOLO-v8-red.svg)](https://docs.ultralytics.com/)
-[![Tkinter](https://img.shields.io/badge/UI-Tkinter-grey.svg)](https://docs.python.org/3/library/tkinter.html)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# 🐍 YOLO Projekat Python
+### *AI Engine i Multithreaded Kontrolni Terminal*
 
-**YOLO vozilo Python** je sofisticirana desktop aplikacija razvijena u Python-u koja služi kao kontrolni centar za pametno vozilo bazirano na mikrokontrolerima (poput ESP32-CAM ili Raspberry Pi). Aplikacija kombinuje daljinsko upravljanje u realnom vremenu sa naprednim AI funkcijama za prepoznavanje objekata pomoću **YOLOv8** modela.
-
-
-
----
-
-## ✨ Ključne Karakteristike
-
-### 📺 Live Stream & AI Monitoring
-* **Real-Time Processing:** Prikaz video signala sa kamere vozila u realnom vremenu uz sinhronu YOLOv8 detekciju.
-* **YOLOv8 Integracija:** Automatsko prepoznavanje objekata (ljudi, automobili, prepreke) sa vizuelnim bounding-box prikazom.
-* **Smart Banana Tracker:** Specijalizovani mod za automatsko praćenje objekta (klasa: banana). Vozilo inteligentno koriguje svoju putanju kako bi zadržalo objekt u centru kadra.
-* **Multithreading Arhitektura:** Obrada slike i AI detekcija se vrše u posebnim nitima, što osigurava stabilan FPS i responzivan korisnički interfejs.
-
-### 🎮 Kontrolni Sistem
-* **Keyboard Mastery:** Potpuna kontrola kretanja putem strelica na tastaturi uz podršku za kombinovane komande (npr. napred + levo).
-* **On-Screen Dashboard:** Intuitivna dugmad unutar Tkinter interfejsa za brzu kontrolu mišem.
-* **WebSocket Engine:** Brz prenos komandi bez latencije putem asinhronih WebSocketa.
+[![Python](https://img.shields.io/badge/Python-3.9%2B-38bdf8?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![YOLOv8](https://img.shields.io/badge/AI-YOLOv8-075985?style=for-the-badge&logo=ultralytics&logoColor=white)](https://docs.ultralytics.com/)
+[![OpenCV](https://img.shields.io/badge/Vision-OpenCV-38bdf8?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-94a3b8?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 ---
 
-## 🛠 Tehnologije
+<p align="center">
+  <b>YOLO Vozilo Python</b> predstavlja moćan desktop klijent dizajniran za real-time vizuelnu analitiku i preciznu daljinsku kontrolu. 
+  <br>Aplikacija koristi <b>YOLOv8 Nano</b> model za inteligentno procesiranje video strima uz minimalno procesorsko opterećenje.
+</p>
 
-| Segment | Tehnologija |
-| :--- | :--- |
-| **GUI Framework** | Tkinter (Python Native UI) |
-| **AI Model** | Ultralytics YOLOv8 (Nano verzija) |
-| **Networking** | WebSockets & Requests |
-| **Image Handling** | OpenCV & Pillow (PIL) |
-| **Backend** | Python 3.9+ |
 
----
 
-## 🚀 Kako radi?
+</div>
 
-### 1. Povezivanje
-Aplikacija komunicira sa vozilom putem dve adrese:
-* **WebSocket:** `ws://192.168.4.1:1606` (Slanje komandi kretanja).
-* **HTTP Stream:** `http://192.168.4.1:1607/capture` (Preuzimanje frejmova za analizu).
+## 🚀 Ključne Karakteristike
 
-### 2. Logika Praćenja (Follow Mode)
-Aplikacija analizira horizontalni offset detektovanog objekta:
-* **Levo:** Ako je objekt na levoj strani, šalje se komanda `levo+nazad` (za rotaciju).
-* **Centar:** Ako je objekt u sredini, šalje se komanda `napred`.
-* **Desno:** Ako je objekt na desnoj strani, šalje se komanda `desno+nazad`.
+### 🧠 Napredna AI Detekcija
+* **Real-Time Inference:** Kontinuirano procesiranje frejmova sa grafičkim prikazom *bounding-box* identifikatora.
+* **Smart Tracking (Follow Mode):** Napredni algoritam za praćenje specifičnih objekata (npr. klasa "banana"). Sistem dinamički koriguje kretanje vozila kako bi cilj ostao u centru vidnog polja.
+* **Multithreaded Architecture:** Odvojene niti za mrežnu komunikaciju, UI renderovanje i AI inferenciju, čime se postiže stabilan FPS i maksimalna responzivnost.
 
-### 3. Komande kretanja
-Vozilo prima sledeće string komande:
-* `napred`, `nazad`, `levo`, `desno`
-* `stop` (automatski se šalje čim korisnik pusti taster)
+### 🎮 Kontrolna Tabla
+* **Keyboard Mastery:** Full-stack kontrola kretanja putem tastature uz podršku za složene vektorske komande (npr. napred + levo).
+* **Asynchronous WebSockets:** Implementacija `websockets` biblioteke za ultrabrz prenos komandi kretanja ka Raspberry Pi 5 kontroleru.
+* **Tkinter Dash:** Modernizovani GUI sa real-time logovanjem sistemskih događaja i mrežnog statusa.
 
 ---
 
-## 📦 Instalacija i Podešavanje
+## 🛠 Tehnološki Stack
 
-1. **Klonirajte repozitorijum:**
+| Segment | Tehnologija | Uloga |
+| :--- | :--- | :--- |
+| **Backend Core** | Python 3.9+ | Glavna programska logika |
+| **AI Engine** | Ultralytics YOLOv8 | Computer Vision i detekcija |
+| **Networking** | WebSockets & Requests | Real-time I/O komunikacija |
+| **Image Processing** | OpenCV | Filtriranje i manipulacija frejmova |
+| **UI Framework** | Tkinter / Pillow | Grafički interfejs i renderovanje |
+
+---
+
+## 🔧 Arhitektura i Rad
+
+Sistem funkcioniše kao centralni čvor u YOLO ekosistemu:
+
+> [!NOTE]
+> Praćenje objekata koristi PID-like logiku za glatku korekciju pravca motora, sprečavajući nagle oscilacije pri kretanju.
+
+### 🌐 Mrežni Protokoli
+- **Command Stream:** `ws://192.168.4.1:1606` (Low-latency kontrola).
+- **Video Capture:** `http://192.168.4.1:1607/capture` (Raw MJPEG stream).
+
+### 📐 Logika Praćenja
+Aplikacija izračunava horizontalni offset objekta u odnosu na centar frejma:
+1. **Levo:** Aktivira `rot_levo` za centriranje kadra.
+2. **Centar:** Održava `napred` vektor kretanja.
+3. **Desno:** Aktivira `rot_desno` za centriranje kadra.
+
+---
+
+## 📦 Instalacija
+
+1. **Kloniraj:**
    ```bash
-   git clone https://github.com/yolo-projekat/Yolo-Projekat-Python/
+   git clone [https://github.com/yolo-projekat/Yolo-Projekat-Python/](https://github.com/yolo-projekat/Yolo-Projekat-Python/)
    cd Yolo-Projekat-Python
-Instalirajte zavisnosti:
+Dependencies:
 
-Bash
 pip install -r requirements.txt
-Povežite se na WiFi vozila: Povežite svoj računar na WiFi pristupnu tačku robota (default IP: 192.168.4.1).
+Run: Povežite se na mrežu vozila i pokrenite:
 
-Pokrenite aplikaciju:
-
-Bash
 python main.py
+🎨 Vizuelni Identitet
+U skladu sa Glassmorphism stilom projekta:
 
-🎨 Teme i UI
-Aplikacija koristi modernu i preglednu paletu boja unutar Tkinter okruženja:
+UI Background: Deep Navy (#0f172a) kontrast za bolju vidljivost bounding-boxova.
 
-Dark Mode Stream: Crna pozadina za video prikaz radi boljeg kontrasta bounding-boxova.
+Accent Color: #38bdf8 za aktivne niti i mrežne indikatore.
 
-Interactive Buttons: Vizuelna povratna informacija prilikom klika na kontrole.
+<div align="center">
 
-Real-time Logs: Konzola unutar aplikacije prikazuje status konekcije i poslate komande.
+Autor: Danilo Stoletović • Mentor: Dejan Batanjac
 
-Autor: Danilo Stoletovic
+ETŠ „Nikola Tesla“ Niš • 2026
 
-Licenca: MIT
+</div>
