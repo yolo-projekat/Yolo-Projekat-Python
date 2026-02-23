@@ -5,7 +5,7 @@ Markdown
 ### *AI Engine i Multithreaded Kontrolni Terminal*
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-38bdf8?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![YOLOv8](https://img.shields.io/badge/AI-YOLOv8-075985?style=for-the-badge&logo=ultralytics&logoColor=white)](https://docs.ultralytics.com/)
+[![YOLOv8](https://img.shields.io/badge/AI-YOLOv26-075985?style=for-the-badge&logo=ultralytics&logoColor=white)](https://docs.ultralytics.com/)
 [![OpenCV](https://img.shields.io/badge/Vision-OpenCV-38bdf8?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-94a3b8?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
