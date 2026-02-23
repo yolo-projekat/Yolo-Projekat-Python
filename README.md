@@ -39,7 +39,7 @@ Markdown
 | Segment | Tehnologija | Uloga |
 | :--- | :--- | :--- |
 | **Backend Core** | Python 3.9+ | Glavna programska logika |
-| **AI Engine** | Ultralytics YOLOv8 | Computer Vision i detekcija |
+| **AI Engine** | Ultralytics YOLOv26 | Computer Vision i detekcija |
 | **Networking** | WebSockets & Requests | Real-time I/O komunikacija |
 | **Image Processing** | OpenCV | Filtriranje i manipulacija frejmova |
 | **UI Framework** | Tkinter / Pillow | Grafički interfejs i renderovanje |
